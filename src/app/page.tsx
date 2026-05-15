@@ -1,6 +1,7 @@
 import Header from "@/components/layout/Header";
 import Hero from "@/components/home/Hero";
 import Footer from "@/components/layout/Footer";
+import HowItWorks from "@/components/home/HowItWorks";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Header />
       <main className="flex-1 w-full">
         <Hero />
+        <HowItWorks/>
       </main>
       <Footer />
     </div>

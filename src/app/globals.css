@@ -1,13 +1,36 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
+  /* Core Foundation: Deep void-like indigo/black */
+  --background: #06040d;
   --foreground: #ffffff;
+  
+  /* Neon Accents: For gradients and glowing elements */
+  --neon-purple: #9d4edd;
+  --neon-magenta: #f72585;
+  --neon-cyan: #4cc9f0;
+  --neon-orange: #f8961e;
+
+  /* Glassmorphism Utilities: Translucent bases and razor-thin borders */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
 }
 
 @theme inline {
+  /* Map standard colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
+  /* Map Neon Accents (creates utility classes like bg-neon-purple, text-neon-magenta) */
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-magenta: var(--neon-magenta);
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-orange: var(--neon-orange);
+  
+  /* Map Glass Utilities */
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+
   /* Map the Poppins variable here */
   --font-sans: var(--font-poppins); 
 }
@@ -15,6 +38,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  /* Apply the mapped variable */
   font-family: var(--font-sans), sans-serif; 
+  
+  /* Adds a subtle, fixed radial glow at the top of the viewport to mimic the EternoCloud depth */
+  background-image: radial-gradient(circle at 50% -20%, rgba(35, 15, 60, 0.4) 0%, transparent 60%);
+  background-attachment: fixed;
 }

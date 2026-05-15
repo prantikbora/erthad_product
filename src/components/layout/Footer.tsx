@@ -2,22 +2,24 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full border-t border-white/5 bg-black overflow-hidden">
-      {/* Background Glow to match Hero/Header */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#00ffcc]/5 blur-[100px] rounded-full pointer-events-none" />
+    <footer className="relative w-full border-t border-white/5 bg-[#020106]/80 backdrop-blur-2xl overflow-hidden mt-auto">
+      {/* Background Glow to match EternoCloud Void Aesthetic */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-neon-purple/10 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="relative mx-auto w-full max-w-[1400px] px-6 lg:px-12 py-16">
+      <div className="relative mx-auto w-full max-w-[1600px] px-6 lg:px-12 xl:px-20 py-16 z-10">
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3 lg:grid-cols-4">
+          
           {/* Brand Info Column */}
           <div className="lg:col-span-2">
-            <Link
-              href="/"
-              className="text-2xl font-black tracking-tighter text-white italic uppercase"
-            >
-              Erthad.
+            <Link href="/" className="flex items-center gap-2 transition-opacity hover:opacity-80 inline-flex">
+              {/* Subtle EternoCloud-style logo mark matching the Header */}
+              <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-neon-purple to-neon-cyan shadow-[0_0_10px_rgba(157,78,221,0.5)]" />
+              <span className="text-2xl font-bold tracking-tight text-white">
+                Erthad<span className="text-neon-cyan">.</span>
+              </span>
             </Link>
-            <p className="mt-6 max-w-sm text-sm font-medium leading-relaxed text-gray-400">
+            <p className="mt-6 max-w-sm text-sm font-light leading-relaxed text-gray-400">
               Precision-crafted NFC business cards for the modern professional.
               One tap. Infinite connections. Zero friction.
             </p>
@@ -25,7 +27,7 @@ export default function Footer() {
 
           {/* Product Links */}
           <div className="space-y-6">
-            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#00ffcc]">
+            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-neon-cyan opacity-80">
               Product
             </h3>
             <ul className="space-y-4 text-sm font-bold text-gray-400">
@@ -34,12 +36,12 @@ export default function Footer() {
                   href="/checkout"
                   className="transition-colors hover:text-white"
                 >
-                  Design Your Card
+                  Order Now
                 </Link>
               </li>
               <li>
                 <Link
-                  href="#features"
+                  href="/#features"
                   className="transition-colors hover:text-white"
                 >
                   Features
@@ -47,7 +49,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#how-it-works"
+                  href="/#how-it-works"
                   className="transition-colors hover:text-white"
                 >
                   How it Works
@@ -58,7 +60,7 @@ export default function Footer() {
 
           {/* Support & Legal Links */}
           <div className="space-y-6">
-            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-[#00ffcc]">
+            <h3 className="text-[10px] font-black uppercase tracking-[0.2em] text-neon-purple opacity-80">
               Support
             </h3>
             <ul className="space-y-4 text-sm font-bold text-gray-400">
@@ -71,20 +73,22 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link
+                {/* <Link
                   href="/privacy"
                   className="transition-colors hover:text-white"
                 >
                   Privacy Policy
-                </Link>
+                </Link> */}
+                <span className="cursor-default">Privacy Policy</span>
               </li>
               <li>
-                <Link
+                {/* <Link
                   href="/terms"
                   className="transition-colors hover:text-white"
                 >
                   Terms of Service
-                </Link>
+                </Link> */}
+                <span className="cursor-default">Terms of Service</span>
               </li>
             </ul>
           </div>
